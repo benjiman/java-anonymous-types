@@ -13,7 +13,8 @@ public class EnhancingListExample {
         List<String> stringList = asList("alpha", "bravo");
 
         with((ForwardingList<String> & Mappable<String>)() -> stringList, list -> {
-            list.map(String::toUpperCase).forEach(System.out::println);
+            List<String> strings = list.map(String::toUpperCase);
+            strings.forEach(System.out::println);
         });
 
     }

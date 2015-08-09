@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
 import java.util.stream.Stream;
 
-interface ForwardingList<T> extends DelegatesTo<List<T>> {
+interface ForwardingList<T> extends DelegatesTo<List<T>>, List<T> {
     default int size() {
         return delegate().size();
     }
